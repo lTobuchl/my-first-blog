@@ -1,8 +1,6 @@
 from django.shortcuts import render
 from .forms import PostForm
 
-path('post/<int:pk>/edit/', views.post_edit, name='post_edit'),
-
 def post_new(request):
     if request.method == "POST":
         form = PostForm(request.POST)
