@@ -1,56 +1,30 @@
 {% load static %}
 <html>
     <head>
-        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-        <title>Wesoła Historyjka</title>
+        <title>Django Girls blog</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     </head>
     <body>
-        <div class="page-header">
+        <div>
             <h1><a href="/">Django Girls Blog</a></h1>
         </div>
 
-        <div>
-            <h1><a href="/">Wlazł kotek na płotek</a></h1>
-        </div>
         <div class="content container">
-            <div class="row">
-                <div class="col-md-8">
-                    {% for post in posts %}
-                    <div class="post">
-                        <div class="date">
-                            <p>published: {{ post.published_date }}</p>
-                        </div>
-                            <h2><a href="">{{ post.title }}</a></h2>
-                            <p>{{ post.text|linebreaksbr }}</p>
+    <div class="row">
+        <div class="col-md-8">
+            {% for post in posts %}
+                <div class="post">
+                    <div class="date">
+                        <p>published: {{ post.published_date }}</p>
                     </div>
-                        {% endfor %}
+                    <h2><a href="">{{ post.title }}</a></h2>
+                    <p>{{ post.text|linebreaksbr }}</p>
                 </div>
-            </div>
+            {% endfor %}
         </div>
-        <div>
-            <p>Wlazł kotek na płotek i mruga</p>
-            <p>ładna to piosenka, nie długa</p>
-            <p>Nie długa nie krótka lecz w sam raz</p>
-            <p>Zaśpiewaj koteczku jeszcze raz</p>
-            <h2><a href="">A co by było gdyby?</a></h2>
-            <p>A co by było gdyby kotem był pies?</p>
-        </div>
-
-        <div>
-
-            <h2><a href="">Wlazł piesek na płotek</a></h2>
-            <p>Wlazł piesek na płotek i mruga</p>
-            <p>ładna to piosenka, nie długa</p>
-            <p>Nie długa nie krótka lecz w sam raz</p>
-            <p>Zaśpiewaj pieseczku jeszcze raz</p>
-             </div>
-        <div class="post">
-    <p>published: {{ post.published_date }}</p>
-    <h2><a href="">{{ post.title }}</a></h2>
-    <p>{{ post.text|linebreaksbr }}</p>
-            </div>
+    </div>
+</div>
     </body>
 </html>
