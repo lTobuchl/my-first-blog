@@ -1,5 +1,5 @@
-from .forms import PostForm
 from django.shortcuts import render, get_object_or_404
+from .forms import PostForm
 
 def post_new(request):
     if request.method == "POST":
